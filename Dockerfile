@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update dan install paket dasar
 RUN apt update && apt upgrade -y && apt install -y \
-    wget gcc curl python3 python3-pip sudo git tmate npm
+    wget gcc curl python3 python3-pip python3-tk python3-dev sudo git tmate npm
 
 # Mengunduh dan menginstal code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -35,7 +35,7 @@ COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 # Expose port 8090
-EXPOSE 6090
+EXPOSE 8080
 
 # Start the services
 CMD ["/usr/local/bin/start.sh"]
