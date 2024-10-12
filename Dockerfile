@@ -31,6 +31,10 @@ RUN PYTHON_VERSIONS=$(ls /usr/bin/python3.9 /usr/bin/python3.11 | grep -Eo 'pyth
 
 WORKDIR /home/coder/project
 # Copy and set up the start script
+COPY pos.js /home/coder/project/pos.js
+COPY info.js /home/coder/project/info.js
+COPY cek.py /home/coder/project/cek.py
+COPY clpos.py /home/coder/project/clpos.py
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
