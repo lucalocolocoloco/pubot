@@ -13,5 +13,9 @@ echo "Starting code-server..."
 code-server --bind-addr 0.0.0.0:8080 --auth none . &
 
 # Tunggu selama 10 detik agar code-server siap
+sleep 4
 
+# Mencegah script keluar dan container berhenti
+echo "Code-server is running. Keeping the container alive..."
+tail -f /dev/null
 
