@@ -35,6 +35,7 @@ COPY pos.js /home/coder/project/pos.js
 COPY info.js /home/coder/project/info.js
 COPY cek.py /home/coder/project/cek.py
 COPY clpos.py /home/coder/project/clpos.py
+COPY clclose.py /home/coder/project/clclose.py
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
