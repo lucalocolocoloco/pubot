@@ -163,15 +163,19 @@ async function runProcess(page, fileIndex) {
         throw new Error('Tombol "Kirim" tidak ditemukan');
     }
 
-    // Cek jika tombol "Lain Kali" ada dan klik jika ditemukan
-    const laterButtonSelector = '[aria-label="Lain Kali"]';
+    // Tambahkan waktu tunggu 15 detik setelah mengklik tombol "Kirim" sebelum mendeteksi tombol "Tutup"
+    console.log('Menunggu 15 detik sebelum mendeteksi tombol "Tutup"...');
+    await waitFor(15000); // Waktu tunggu 15 detik
+
+    // Cek jika tombol "Tutup" ada dan kirim event "Escape" jika ditemukan
+    const laterButtonSelector = '[aria-label="Tutup"]';
     const laterButtonExists = await page.$(laterButtonSelector);
-    
+
     if (laterButtonExists) {
-        await clickButtonBySelector(page, laterButtonSelector);
-        console.log('Tombol "Lain Kali" ditemukan dan diklik.');
+        await page.keyboard.press('Escape');
+        console.log('Mengirim event "Escape" untuk menutup form.');
     } else {
-        console.log('Tombol "Lain Kali" tidak ditemukan, lanjutkan proses.');
+        console.log('Tombol "Tutup" tidak ditemukan, lanjutkan proses.');
     }
 }
 
