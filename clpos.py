@@ -6,7 +6,7 @@ import sys  # Import modul sys untuk keluar dari program
 pyautogui.FAILSAFE = False
 
 # Koordinat untuk klik
-coordinates = (789, 320)  # Ganti dengan koordinat yang diinginkan
+coordinates = (770, 300)  # Ganti dengan koordinat yang diinginkan
 
 # Menunggu 3 detik sebelum melakukan klik
 time.sleep(3)
