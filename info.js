@@ -3,7 +3,7 @@ const moment = require('moment');
 const fs = require('fs');
 
 // API Key for NewsAPI
-const apiKey = '55deb1bc9a9d42cfa3a207130165bd7d';
+const apiKey = '8228006998274f3cb39d05ae86eb8eea';
 let articleIndex = 0; // Variabel untuk melacak rangking artikel
 
 async function getNews(queries, language = 'en', fromDate = null, pageSize = 100) { // Mengambil 100 berita
